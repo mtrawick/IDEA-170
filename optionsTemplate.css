@@ -1,0 +1,245 @@
+body {
+    font-size: 100%;
+	
+}
+a {
+    text-decoration: none;
+}
+
+.function-option p {
+  /* display:inline-block; */
+}
+
+.hidden {
+  display: none;
+}
+
+.left-pane {
+  float:left;
+  border: 2px solid black;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#plots-wrapper .optHeader {
+	border : 2px solid black;
+	padding: 2px;
+	background-color: #b3d9ff;
+}
+
+.right-pane {
+  float: right;
+  display: inline-block;
+  border: 2px solid black;
+  
+  
+}
+
+.user-input-wrapper {
+	width: 1100px;
+	display: inline-block;
+	border: 2px solid black;
+}
+
+.user-code {
+	float: right;
+	display:inline-block;
+	width: 700px; 
+	height: 150px;
+	border: 2px solid black;
+	padding: 5px 25px 5px 25px; 
+	margin: 5px 5px 10px 5px;
+	
+}
+
+#add-func {
+	display: inline-block;
+	color: green;	
+}
+
+#user-defined {
+	width: 200px;
+	
+}
+
+.function-option {
+	/* display: block; */
+	vertical-align: top;
+	border-top: 0px;
+	border-left: 0px solid black;
+	border-bottom: 0px solid black;
+	
+	border-right: 0px solid black;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 250px;
+	
+}
+
+.function-option label{
+	display: inline-block;
+	color: black;
+}
+
+
+
+.user-code p{
+	padding: none;
+	margin: none;
+	color: black; /* Add some fancy shadowing later */
+}
+
+.optHeader {
+	border : 2px solid black;
+	padding: 2px;
+	background-color:#d3d3d3;
+}
+
+.optHeader span {
+	font-weight:bold;
+}
+
+.remove {
+	cursor: pointer;
+	color: red;
+}
+
+.unwanted {
+	
+}
+		
+.collapse {
+	
+	width: 50%;
+	display: inline-block;
+	cursor: pointer;
+}
+
+/* The id of the .user-code */
+#waplot-box {
+	width: 685px;
+}
+
+.left-list {
+	padding: 5px;
+	margin-left: 10px;
+	display: inline-block;
+	float:left;
+
+}
+
+/* Copied from http://www.formget.com/css-lists/  */
+		.list-type2{
+			width:200px;
+			margin:0 auto;
+			
+		}
+
+		.list-type2 ol{
+			counter-reset: li;
+			list-style: none; 
+			*list-style: decimal;
+			font-size: 15px;
+			font-family: 'Raleway', sans-serif;
+			padding: 0;
+			margin-bottom: 4em;
+		}
+
+		.list-type2 ol ol{
+			margin: 0 0 0 2em;
+		}
+
+		.list-type2 a{
+			
+			position: relative;
+			display: block;
+			padding: .4em .4em .4em 2em;
+			*padding: .4em;
+			margin: .5em 0;
+			background: #FC756F;
+			color: #444;
+			text-decoration: none;
+			transition: all .2s ease-in-out;
+		}
+		
+		.left-list.list-type2 a{
+			
+			position: relative;
+			display: block;
+			padding: .4em .4em .4em 2em;
+			*padding: .4em;
+			margin: .5em 0;
+			background: #b3d9ff; /* #FC756F; */
+			color: #444;
+			text-decoration: none;
+			transition: all .2s ease-in-out;
+		}
+		
+		
+
+		.list-type2 a:hover{
+			counter-increment: li;
+			background: #d6d4d4;
+			text-decoration:none;
+			transform: scale(1.1);
+		}
+
+		.list-type2 a:before{
+			
+			counter-increment: li;
+			position: absolute;
+			left: -1.3em;
+			top: 50%;
+			margin-top: -1.3em;
+			background: #FC756F;
+			height: 2em;
+			width: 2em;
+			line-height: 2em;
+			border: .3em solid #fff;
+			text-align: center;
+			font-weight: bold;
+			color:#FFF;
+		}
+		
+
+
+.btn {
+    background: #EB0808;
+    -webkit-box-shadow: 0px 1px 0px 0px #ff8272 inset, 0px 0px 0px 4px #e6e6e6;
+    -moz-box-shadow: 0px 1px 0px 0px #ff8272 inset, 0px 0px 0px 4px #e6e6e6;
+    box-shadow: 0px 1px 0px 0px #ff8272 inset, 0px 0px 0px 4px #e6e6e6;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: all 0s 0;
+    -moz-transition: all 0s 0;
+    -o-transition: all 0s 0;
+    transition: all 0s 0;
+    text-shadow: 0px 1px 1px #9c3528;
+    padding: 6px 30px;
+    border-color: #ec513c;
+    border-width: 1px;
+    border-style: solid;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 14px;
+	color: #ffffff;
+    font-weight: bold;
+	/* position: relative;*/
+	margin-bottom: 50px;
+	width: 100px;
+	position: 75%;
+	
+	
+
+}
+.btn:hover {
+    background: #ff6551;
+    -webkit-box-shadow: 0px 0px 0px 4px #ffbfab;
+    -moz-box-shadow: 0px 0px 0px 4px #ffbfab;
+    box-shadow: 0px 0px 0px 4px #ffbfab;
+    border-color: #ed5e4b;
+}

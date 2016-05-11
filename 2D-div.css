@@ -1,0 +1,53 @@
+
+.sub-wrapper {
+	border: 1px solid grey;
+	background: #eeeeee;
+	margin: 5px;
+}
+
+.header {
+
+}
+
+.func-plot-wrapper {
+	border: 2px solid black;
+	width: 400px;
+}
+
+.title {
+	font-size:large;
+	background:white;
+	font-weight:bold;
+	width: 20%;
+}
+
+.hidden{
+	display:none;
+}
+
+.TwoD-option {
+margin-left: 25px;
+
+}
+
+span {
+	display: block;
+	margin: 2px;	
+}
+
+span  span{
+	display: inline-block;	
+}
+
+.plus {
+	width:25px;
+	height:25px;
+	margin: 2px;
+}
+
+textarea {
+display: block;
+width: 350px;
+margin: 2px;
+
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="optionsTemplate.css">
+		<title>
+			Template Container
+		</title>
+	</head>
+	<body>
+		
+		<div class="user-input-wrapper">
+			
+			<div class = 'left-pane'>
+				
+				<div id = "plots-wrapper">
+					
+					<div id = "Plot-1" class = "plot">
+						<div class="optHeader">
+							<span>2D Function Plot</span>
+							<div class="collapse"> [-] </div>
+						</div>
+						<div id="addInputBox">(+1)</div>						
+						<div id='function-1' class = 'plot-option'>
+							<p class='input'>y = <input type='text' id="func-1" class="func-definition"></p> <div id="to-user-defined-1">[make function]</div>
+						</div>
+						<!--Will need to work something out to avoid id name collisions when user adds another 2D Function Plot --> 
+						
+						<div id='domain' class = 'plot-option'>
+							<h4>Domain</h4>
+							<p class='input'>x-min:<input type='text' value = "-10" id = "domain-xMin-1" class = "domain"> </p> 
+							<p class='input'>x-max:<input type='text' value = "10" id = "domain-xMax-1" class = "domain"> </p> 
+						</div>
+					
+						<div class="optHeader">
+							<span>Styling</span>
+							<a class="collapse"> [+] </a> <a class="remove">( X )</a>
+						</div> 				
+						<div id = 'style' class = 'plot-option hidden'>
+							<p class='input'>
+								color: <select id="style_color">
+								<option value="1">black</option>
+								<option value="2">webassign2</option>
+								<option value="3">webassign3</option>						
+								</select>
+							</p>
+							<p class='input'>
+								thickness: <select id="style_thickness">
+								<option value="1">thick</option>
+								<option value="2">thin</option>						
+								</select>
+							</p>						
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="optHeader">
+					<span>Viewing Window</span>
+					<a class="collapse"> [-] </a> <a class="remove">( X )</a>
+				</div> 				
+				<div id = 'window' class = 'function-option'>
+					
+					<!-- > The way I have it setup is foolish. Each of the three options should be one click away.
+					It'll be a lot simpler. But here is an explanation of what is happening...  The classes in the
+					p tags with input tags inside have attributes to be used by the javascript.
+					The type t or r represents radiobox or textbox. Then for the level and nextlevel attributes, level represents
+					how many clicks you must do to get to it from when the page loads initially. nextLevel represents the level
+					it leads to. The nextLevel is 0 if it doesn't lead anywhere.
+					</!-->
+					<form>
+						<p class = 'visible domRan' type = 'r' level = '0' nextLevel = '0' > Equal domain and range <input class="radiobox" type="radio" name = "window" checked ></p>
+						<p class = 'visible domRan' type = 'r' level = '0' nextLevel = '1'> Different domain and range <input class="radiobox" type="radio" name = "window" ></p>
+					</form>
+					<!-- > 
+					The numbers after the ids of the text input boxes represent the different options of viewing window. 
+					The javascript uses the 1,2, or 3. 
+					</!-->
+					<p class = 'visible domRan' type = 't' level = '0' nextLevel = '0'>Max x or y-value:<input type="text" id="window-max-x1" value = "10"> </p>
+					<form>
+						<p class = 'hidden domRan' type = 'r' level = '1' nextLevel = '0'> Centered at origin <input type="radio" class="radiobox" id = 'cen-at-ori' name = "window" checked="true"></p>
+						<p class = 'hidden domRan' type = 'r' level = '1' nextLevel = '2'> Not centered at origin <input type="radio" class="radiobox" id = 'not-cen-ori' name = "window" ></p>
+					</form>
+					<p class = 'hidden domRan' type = 't' level = '1' nextLevel = '0'>Max x-value:<input type="text" id="window-max-x2" value = "6"> </p>
+					<p class = 'hidden domRan' type = 't' level = '1' nextLevel = '0'>Max y-value:<input type="text" id="window-max-y2" value = "10"> </p>
+					
+					<p class = 'hidden domRan' type = 't' level = '2' nextLevel = '0'>Min x-value:<input type="text" id="window-min-x3" value = "-2"> </p>
+					<p class = 'hidden domRan' type = 't' level = '2' nextLevel = '0'>Max x-value:<input type="text" id="window-max-x3" value = "10"> </p>
+					<p class = 'hidden domRan' type = 't' level = '2' nextLevel = '0'>Min y-value:<input type="text" id="window-min-y3" value = "-2"> </p>
+					<p class = 'hidden domRan' type = 't' level = '2' nextLevel = '0'>Max y-value:<input type="text" id="window-max-y3" value = "10"> </p>
+				</div>				
+				
+				
+				<div class="optHeader">
+					<span>Axes Labels</span>
+					<div class="collapse"> [+] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='axisLabel' class = 'function-option hidden'>
+					
+					<p class='input'>x-axis:<input type='text' value = "x" id = "axisLabel-x"> </p> 
+					<p class='input'>y-axis:<input type='text' value = "y" id = "axisLabel-y"> </p> 
+				</div>
+				<div class="optHeader">
+					<span>Aspect Ratio</span>
+					<div class="collapse"> [+] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='aspectRatio' class = 'function-option hidden'>
+					<p class='input'>Aspect Ratio:<input type='text' value = "1" id = "aspectRatio-in"> </p> 
+				</div>
+				<div class="optHeader">
+					<span>Axes Origin</span>
+					<div class="collapse"> [+] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='axesOrigin' class = 'function-option hidden'>
+					<p class='input'>Axis Origin x:<input type='text' value = "0" id = "axesOrigin-x"> </p> 
+					<p class='input'>Axis Origin y:<input type='text' value = "0" id = "axesOrigin-y"> </p> 
+				</div>
+				
+				
+				<div class="optHeader hidden unwanted">
+					<span>Gridlines</span>
+					<div class="collapse"> [-] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='gridlines' class = 'function-option hidden unwanted'>
+					
+					<p class='input'>x-min:<input type='text' value = "-10" id = "gridlines-x-min"> </p> 
+					<p class='input'>x-max:<input type='text' value = "10" id = "gridlines-x-max"> </p> 
+					<p class='input'>x-increment:<input type='text' value = "1" id = "gridlines-x-inc"> </p>
+					<p class='input'>y-min:<input type='text' value = "-10" id = "gridlines-y-min"> </p> 
+					<p class='input'>y-max:<input type='text' value = "10" id = "gridlines-y-max"> </p> 
+					<p class='input'>y-increment:<input type='text' value = "1" id = "gridlines-y-inc"> </p>  					  					
+				</div>
+				
+				<div class="optHeader hidden unwanted">
+					<span>Tickmarks</span>
+					<div class="collapse"> [-] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='tickmarks' class = 'function-option hidden unwanted'>
+					
+					<p class='input'>x-min:<input type='text' value = "-10" id = "tickmarks-x-min"> </p> 
+					<p class='input'>x-max:<input type='text' value = "10" id = "tickmarks-x-max"> </p> 
+					<p class='input'>x-increment:<input type='text' value = "2" id = "tickmarks-x-inc"> </p>
+					<p class='input'>y-min:<input type='text' value = "-10" id = "tickmarks-y-min"> </p> 
+					<p class='input'>y-max:<input type='text' value = "10" id = "tickmarks-y-max"> </p> 
+					<p class='input'>y-increment:<input type='text' value = "2" id = "tickmarks-y-inc"> </p>  					  					
+				</div>
+				
+				<div class="optHeader hidden unwanted">
+					<span>Text</span>
+					<div class="collapse"> [-] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='text' class = 'function-option hidden unwanted'>
+					
+					<p class='input'>x-coordinate:<input type='text' value = "0" id = "text-x"> </p> 
+					<p class='input'>y-coordinate:<input type='text' value = "0" id = "text-y"> </p> 
+					<p class='input'>text:<input type='text' value = "f[x]" id = "text-value"> </p> 
+				</div>
+				
+				<div class="optHeader hidden unwanted">
+					<span>Point</span>
+					<div class="collapse"> [-] </div> <a class="remove">( X )</a>
+				</div> 				
+				<div id='point' class = 'function-option hidden unwanted'>
+					
+					<p class='input'>x-coordinate:<input type='text' value = "2" id = "point-x"> </p> 
+					<p class='input'>y-coordinate:<input type='text' value = "f0[2]" id = "point-y"> </p> 
+					<p class='input'>size:<input type='text' value = ".025" id = "point-size"> </p> 
+				</div>
+				
+			</div>
+			
+			
+			<div class = 'right-pane'>
+				<div class="left-list list-type2">
+					<ol>
+						<li><a href="#" id="twoD-a" class = "menu-option">2D Function Plot</a></li>
+						<li><a href="#" id="parametric-a" class = "menu-option">Parametric</a></li>
+						<li><a href="#" id="polar-a" class = "menu-option">Polar</a></li>
+						<li><a href="#" id="list-a" class = "menu-option">List</a></li>
+						<li><a href="#" id="vLine-a" class = "menu-option">Vertical Line</a></li>
+						<li><a href="#" id="hLine-a" class = "menu-option">Horizontal Line</a></li>
+						
+					</ol>
+				</div>
+				<div class="right-list list-type2">
+					<ol>
+						<li><a href="#" id="gridlines-a" class = "menu-option">Gridlines</a></li>
+						<li><a href="#" id="arrow-a" class = "menu-option">Arrow</a></li>
+						<li><a href="#" id="text-a" class = "menu-option">Text</a></li>
+						<li><a href="#" id="point-a" class = "menu-option">Point</a></li>
+						<li><a href="#" id="open-a" class = "menu-option">Open Point</a></li>
+						<li><a href="#" id="tickmarks-a" class = "menu-option">Tickmarks</a></li>
+						
+					</ol>
+				</div>
+				<div class="user-code">
+					<p> Waplot Code<p>
+					<textarea id="waplot-box" rows="6" placeholder="Hit the get code button and the waplot code will appear here"></textarea>
+				</div>	
+			</div>		
+		
+		</div>
+		
+		<div class="footer-thing">
+			<div class="btn">
+				<a  href="#">Get Code</a>
+			</div>
+			<textarea id="user-defined" rows="6" placeholder="define variables or functions here"></textarea>
+		</div>
+	
+	
+	
+		<script src="jquery-1.11.3.min.js"></script>
+		<script src="waplotObj.js"></script>
+		<script src="options.js"></script>
+		
+	</body>
+</html>

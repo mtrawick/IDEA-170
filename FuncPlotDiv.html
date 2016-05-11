@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="2D-div.css">
+		<title>
+			2D Function Plot
+		</title>
+	</head>
+	<body>
+	<div class="func-plot-wrapper">
+		<div class="func-header">
+			<span class="header">2D Function Plot</span>			
+		</div>
+		<div class="sub-wrapper">
+			<span class="title">Function(s)</span>
+			<div id = "2D-funcs-1" class = "TwoD-option">
+				<span class="input">y<sub>1</sub> = <input type='text'></span>
+				<input type='button' value='+' class='plus' id="2D-plus1Func-1" />
+				<input type='button' value='create mathematica function(s)' id="2D-toMFunc-1" />
+				<textarea id="user-defined-1" class="hidden" rows="3" placeholder="define variables or functions here" ></textarea>
+			</div>
+		</div>
+		<div class="sub-wrapper">
+		<span class="title">Domain</span>
+			<div id = "2D-domains-1" class = "TwoD-option">
+				<span class="input">x-min: <input type='text' id="2D-domain-min-1"></span>
+				<span class="input">x-max: <input type='text' id="2D-domain-max-1"></span>
+			</div>
+		</div>
+		<div class = "sub-wrapper">
+		<span class="title">Styling</span>
+			<div id = '2D-style-11' class = 'TwoD-option'>
+				<span class='input'>
+					color: <select id="style_color">
+					<option value="1">black</option>
+					<option value="2">webassign2</option>
+					<option value="3">webassign3</option>						
+					</select>
+				</span>
+				<span class='input'>
+					thickness: <select id="style_thickness">
+					<option value="1">thick</option>
+					<option value="2">thin</option>						
+					</select>
+				</span>						
+			</div>
+		</div>
+	
+	</div>
+	
+	
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="2D-div.js"></script>
+	</body>
+	
+</html>
